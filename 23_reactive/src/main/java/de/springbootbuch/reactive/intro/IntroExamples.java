@@ -1,4 +1,4 @@
-package de.springbootbuch.reactive;
+package de.springbootbuch.reactive.intro;
 
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
@@ -6,8 +6,6 @@ import reactor.core.publisher.Mono;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.UUID;
-import java.util.function.Function;
-import java.util.stream.LongStream;
 
 public class IntroExamples {
 
