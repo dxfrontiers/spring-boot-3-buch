@@ -17,10 +17,6 @@ public class PersonHandler {
     private final PersonService personService;
     private final PersonFeedSource personFeedSource;
 
-    // findByName
-    // findById
-    // personFeed
-
     public Mono<ServerResponse> findByName(ServerRequest request) {
         return request
                 .queryParam("lastName")
