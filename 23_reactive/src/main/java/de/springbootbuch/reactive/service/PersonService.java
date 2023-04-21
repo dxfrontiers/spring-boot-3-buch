@@ -23,10 +23,13 @@ public class PersonService {
         return personRepository.findById(id);
     }
 
-    public Mono<Void> deleteByName(String firstName, String lastName) {
+    public Mono<Person> deleteByName(String firstName, String lastName) {
         return personRepository
                 .findByFirstNameAndLastName(firstName, lastName)
-                .flatMap(person -> personRepository.deleteById(person.getId()));
+                .switchIfEmpty(Mono.defer(() -> Mono.error(new PersonNotFoundException(String.format("Person with name '%s %s' could not be resolved", firstName, lastName)))))
+                .flatMap(person -> personRepository
+                        .deleteById(person.getId())
+                        .thenReturn(person));
     }
 
     public Mono<Person> addPerson(String firstName, String lastName) {

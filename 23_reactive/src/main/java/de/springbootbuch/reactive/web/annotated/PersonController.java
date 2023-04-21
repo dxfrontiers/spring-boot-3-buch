@@ -49,7 +49,9 @@ public class PersonController {
 
     @DeleteMapping
     public Mono<Void> deleteByName(@RequestParam String firstName, @RequestParam String lastName) {
-        return personService.deleteByName(firstName, lastName);
+        return personService
+                .deleteByName(firstName, lastName)
+                .then();
     }
 
 }
