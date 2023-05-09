@@ -1,6 +1,6 @@
 package de.springboot3.events.transaction;
 
-import de.springboot3.events.user.UserCreatedApplicationEvent;
+import de.springboot3.events.common.UserCreatedApplicationEvent;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.context.ApplicationListener;

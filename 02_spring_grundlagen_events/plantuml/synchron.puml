@@ -1,0 +1,10 @@
+@startuml
+UserService->ApplicationEventPublisher: publishEvent(event)
+activate ApplicationEventPublisher
+ApplicationEventPublisher->UserEventListener: onUserCreated(event)
+activate UserEventListener
+ApplicationEventPublisher<--UserEventListener
+deactivate UserEventListener
+UserService<--ApplicationEventPublisher
+deactivate ApplicationEventPublisher
+@enduml

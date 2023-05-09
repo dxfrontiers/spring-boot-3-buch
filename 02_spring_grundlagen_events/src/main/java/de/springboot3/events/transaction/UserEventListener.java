@@ -1,11 +1,12 @@
 package de.springboot3.events.transaction;
 
-import de.springboot3.events.user.UserCreatedEvent;
-import de.springboot3.events.user.UserLockedEvent;
-import de.springboot3.events.user.UserUnlockedEvent;
+import de.springboot3.events.common.UserCreatedEvent;
+import de.springboot3.events.common.UserLockedEvent;
+import de.springboot3.events.common.UserUnlockedEvent;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.context.event.EventListener;
+import org.springframework.scheduling.annotation.Async;
 import org.springframework.stereotype.Component;
 
 @Component
@@ -19,10 +20,12 @@ public class UserEventListener {
         this.database = database;
     }
 
+    @Async
     @EventListener(UserCreatedEvent.class)
     public void onUserCreated(UserCreatedEvent event) {
         this.database.saveUser(new User(event.user().id(), User.UNLOCKED));
         logger.info("received event: {}", event);
+        throw new RuntimeException("BWAAH");
     }
 
     @EventListener(UserLockedEvent.class)

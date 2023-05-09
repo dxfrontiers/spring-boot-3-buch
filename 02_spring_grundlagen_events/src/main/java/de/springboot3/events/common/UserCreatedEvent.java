@@ -1,4 +1,4 @@
-package de.springboot3.events.user;
+package de.springboot3.events.common;
 
 public record UserCreatedEvent(User user) {
 }

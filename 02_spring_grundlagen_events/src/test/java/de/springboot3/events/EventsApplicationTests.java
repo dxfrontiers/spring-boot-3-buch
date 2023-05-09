@@ -1,8 +1,8 @@
 package de.springboot3.events;
 
+import de.springboot3.events.common.User;
 import de.springboot3.events.transaction.BankingSystem;
 import de.springboot3.events.transaction.TransactionService;
-import de.springboot3.events.user.User;
 import de.springboot3.events.user.UserService;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -27,7 +27,7 @@ class EventsApplicationTests {
     private TransactionService transactionService;
 
     @Test
-    void transfersMoneyWhenUserUnlocked() {
+    void transfersMoneyWhenUserUnlocked() throws InterruptedException {
         userService.createUser(new User(42, "Bob"));
         transactionService.transferMoney(42, 1, 2, 1_000_000);
         verify(bankingSystem).doTransfer(eq(1), eq(2), eq(1_000_000));
