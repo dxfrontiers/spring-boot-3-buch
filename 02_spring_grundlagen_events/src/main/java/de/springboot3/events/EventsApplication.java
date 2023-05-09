@@ -12,12 +12,4 @@ public class EventsApplication {
 		SpringApplication.run(EventsApplication.class, args);
 	}
 
-	public static void main(String[] args) {
-		SpringApplication springApplication =
-				new SpringApplication(EventsApplication.class);
-		springApplication.addListeners(new MyApplicationListener());
-		springApplication.run(args);
-	}
-
-
 }
