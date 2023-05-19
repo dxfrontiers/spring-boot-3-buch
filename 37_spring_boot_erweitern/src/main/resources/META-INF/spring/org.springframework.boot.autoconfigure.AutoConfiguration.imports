@@ -1,0 +1,3 @@
+de.springboot3.extending.library.autoconfiguration.ClientAutoConfiguration
+de.springboot3.extending.library.conditional.ConditionalAutoConfiguration
+de.springboot3.extending.library.customcondition.CustomConditionalAutoConfiguration
