@@ -1,0 +1,2 @@
+org.springframework.boot.env.EnvironmentPostProcessor=\
+  de.springboot3.extending.library.environmentpostprocessor.PropertyRenamingEnvironmentPostProcessor
