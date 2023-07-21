@@ -48,6 +48,18 @@ class PersonServiceTest {
                 .verify();
     }
 
+    @Test
+    public void verifyFindByIdReturnsExpectedPerson() {
+        Person expected = assemblePerson("Sansa", "Stark");
+
+        when(personRepository.findById(1337L)).thenReturn(Mono.just(expected));
+
+        StepVerifier
+                .create(cut.findById(1337L))
+                .expectNext(expected)
+                .verifyComplete();
+    }
+
     private Person assemblePerson(String firstName, String lastName) {
         return new Person()
                 .setId(1337L)
