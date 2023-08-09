@@ -1,0 +1,6 @@
+custom:
+  app-name: "Hello World App (dev)"
+
+weather:
+  url: "https://dev.weather.com "
+  port: 443

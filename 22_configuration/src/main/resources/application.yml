@@ -1,0 +1,11 @@
+server.port: 8081
+
+custom:
+  app-name: "Hello World App"
+
+weather:
+  url: "INVALID"
+  port: "INVALID"
+  max-retries: 3
+  timeout: PT5S
+  token: ${WEATHER_TOKEN}

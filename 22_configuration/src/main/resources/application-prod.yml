@@ -1,0 +1,3 @@
+weather:
+  url: "https://prod.weather.com"
+  port: 443
