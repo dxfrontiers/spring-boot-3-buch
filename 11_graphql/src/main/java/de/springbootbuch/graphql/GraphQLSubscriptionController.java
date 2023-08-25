@@ -20,10 +20,18 @@ public class GraphQLSubscriptionController {
       
       final Consumer<Comment> consumer = sink::next;
 
-      commentConsumers.add(consumer);
-      
-      sink.onDispose(() -> commentConsumers.remove(consumer));
+      registerConsumer(consumer);
+      sink.onDispose(() -> 
+              unregisterConsumer(consumer));
     });
+  }
+
+  private boolean unregisterConsumer(Consumer<Comment> consumer) {
+    return commentConsumers.remove(consumer);
+  }
+
+  private void registerConsumer(Consumer<Comment> consumer) {
+    commentConsumers.add(consumer);
   }
 
   @EventListener
