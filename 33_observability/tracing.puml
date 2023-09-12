@@ -1,0 +1,20 @@
+@startuml
+group trace "foo"
+activate Client
+"Client"->"Customer Service": no traceId or spanId
+activate "Customer Service"
+group span "bar"
+"Customer Service"->"Address Service": traceId "foo"; spanId "bar"
+end
+group span "baz"
+activate "Address Service"
+"Address Service"->"Address Service": traceId "foo"; spanId "baz"
+end
+group span "bar"
+"Customer Service"<--"Address Service":
+end
+"Client"<--"Customer Service":
+deactivate "Customer Service"
+deactivate Client
+end
+@enduml

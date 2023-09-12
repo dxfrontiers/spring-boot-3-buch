@@ -1,0 +1,29 @@
+<configuration>
+
+    <springProperty scope="context" name="consolePattern" source="logging.pattern.console"/>
+
+    <appender name="CONSOLE" class="ch.qos.logback.core.ConsoleAppender">
+        <layout class="ch.qos.logback.classic.PatternLayout">
+            <Pattern>
+                ${consolePattern}
+            </Pattern>
+        </layout>
+    </appender>
+
+    <springProfile name="prod">
+        <logger name="de.springboot3" level="warn" additivity="false">
+            <appender-ref ref="CONSOLE"/>
+        </logger>
+    </springProfile>
+
+    <springProfile name="staging">
+        <logger name="de.springboot3" level="debug" additivity="false">
+            <appender-ref ref="CONSOLE"/>
+        </logger>
+    </springProfile>
+
+    <root level="info">
+        <appender-ref ref="CONSOLE"/>
+    </root>
+
+</configuration>
