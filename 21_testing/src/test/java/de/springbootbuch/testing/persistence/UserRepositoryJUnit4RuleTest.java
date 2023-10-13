@@ -1,6 +1,5 @@
-package de.springbootbuch.testing.persistence.jpa;
+package de.springbootbuch.testing.persistence;
 
-import de.springbootbuch.testing.persistence.jpa.UserRepository;
 import org.junit.ClassRule;
 import org.junit.Rule;
 import org.junit.Test;

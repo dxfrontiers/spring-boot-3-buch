@@ -1,6 +1,5 @@
-package de.springbootbuch.testing.persistence.jpa;
+package de.springbootbuch.testing.persistence;
 
-import de.springbootbuch.testing.persistence.jpa.UserRepository;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;

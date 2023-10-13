@@ -1,4 +1,4 @@
-package de.springbootbuch.testing.persistence.jpa;
+package de.springbootbuch.testing.persistence;
 
 import de.springbootbuch.testing.model.User;
 import org.springframework.data.repository.CrudRepository;

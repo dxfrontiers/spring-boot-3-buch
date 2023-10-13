@@ -2,7 +2,7 @@ package de.springbootbuch.testing.service;
 
 import de.springbootbuch.testing.exceptions.UserNotFoundException;
 import de.springbootbuch.testing.model.User;
-import de.springbootbuch.testing.persistence.jpa.UserRepository;
+import de.springbootbuch.testing.persistence.UserRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
