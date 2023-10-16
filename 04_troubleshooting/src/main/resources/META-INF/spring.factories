@@ -1,0 +1,5 @@
+org.springframework.boot.env.EnvironmentPostProcessor=\
+  de.springboot3.troubleshooting.properties.UnusedPropertyDetector
+
+org.springframework.boot.SpringApplicationRunListener=\
+  de.springboot3.troubleshooting.StartupFailureLogger

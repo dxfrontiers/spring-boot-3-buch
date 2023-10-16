@@ -1,0 +1,21 @@
+debug: true
+
+logging:
+  pattern:
+    console: "%date %5p [%X{traceId},%X{spanId}] %logger{30} - %message%n"
+  level:
+    org.springframework: debug
+
+unused.property: foo
+
+management:
+
+  endpoint:
+    env:
+      show-values: always
+
+  endpoints:
+    enabled-by-default: true
+    web:
+      exposure:
+        include: "*"
