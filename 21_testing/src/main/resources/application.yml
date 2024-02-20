@@ -1,0 +1,3 @@
+mail:
+  server: mail.somewhere.com
+  port: 1337

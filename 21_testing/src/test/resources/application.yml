@@ -1,0 +1,3 @@
+weather:
+  url: https://local.weather.com
+  port: 8081
