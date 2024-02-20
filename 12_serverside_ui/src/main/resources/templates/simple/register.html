@@ -1,0 +1,31 @@
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+
+<form action="/simple/register"
+      method="post"
+      id="registerForm"
+      th:object="${registrationForm}">
+
+    <h1>Register</h1>
+
+    <label for="name">Name</label>
+    <input id="name"
+           type="text"
+           th:field="*{name}"
+           th:class="*{isNameValid} ? 'valid' : 'invalid'"
+    />
+
+    <label for="email">E-mail</label>
+    <input id="email"
+           type="text"
+           th:field="*{email}"
+           th:class="*{isEmailValid} ? 'valid' : 'invalid'"
+    />
+
+    <input type="submit"/>
+</form>
+</body>
+</html>

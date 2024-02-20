@@ -1,0 +1,37 @@
+debug: true
+
+spring:
+  application:
+    name: observability-app
+
+management:
+
+  endpoint:
+    info:
+      enabled: true
+    pipeline:
+      enabled: true
+    metrics:
+      enabled: true
+
+  endpoints:
+    web:
+      exposure:
+        include: health,info,pipeline,metrics
+
+  info:
+    build:
+      enabled: true
+    git:
+      enabled: true
+
+  tracing:
+    sampling:
+      probability: 1.0
+
+logging:
+  file:
+    name: app.log
+  pattern:
+#    level: "%5p [${spring.application.name:},%X{traceId:-},%X{spanId:-}]"
+    console: "%date %5p [%X{traceId},%X{spanId}] %logger{30} - %message%n"

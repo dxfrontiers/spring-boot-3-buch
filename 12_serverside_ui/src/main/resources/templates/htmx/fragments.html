@@ -1,0 +1,32 @@
+<html xmlns:th="http://www.thymeleaf.org">
+
+<form th:fragment="form(registrationForm)"
+      action="/htmx/register"
+      method="post"
+      id="registerForm"
+      th:object="${registrationForm}"
+      hx-target="this"
+      hx-swap="outerHTML">
+
+    <h1>Register</h1>
+
+    <label for="name">Name</label>
+    <input id="name"
+           type="text"
+           th:field="*{name}"
+           hx-post="/htmx/register/validate"
+           th:class="*{isNameValid} ? 'valid' : 'invalid'"
+    />
+
+    <label for="email">E-mail</label>
+    <input id="email"
+           type="text"
+           th:field="*{email}"
+           hx-post="/htmx/register/validate"
+           th:class="*{isEmailValid} ? 'valid' : 'invalid'"
+    />
+
+    <input type="submit"/>
+</form>
+
+</html>
