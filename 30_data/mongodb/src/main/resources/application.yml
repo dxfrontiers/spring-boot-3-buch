@@ -1,0 +1,10 @@
+spring:
+  data:
+    mongodb:
+      host: "some-mongo-server.somewhere.com"
+      port: 27017
+      additional-hosts:
+        - "some-mongo-server2.somewhere.com:23456"
+      database: "test"
+      username: "user"
+      password: "secret"

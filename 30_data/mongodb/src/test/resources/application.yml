@@ -1,0 +1,8 @@
+de:
+  flapdoodle:
+    mongodb:
+      embedded:
+        version: 7.0.4
+
+logging.level:
+    org.springframework.data.mongodb.core.MongoTemplate: DEBUG
