@@ -1,0 +1,12 @@
+@startsalt
+{
+{T
+ + Projekt
+ ++ frontend
+ +++ package.json
+ +++ build.gradle.kts
+ ++ backend
+ ++ gradle.settings.kts
+}
+}
+@endsalt
