@@ -1,0 +1,29 @@
+@startuml
+  !include https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/master/C4_Deployment.puml
+' uncomment the following line and comment the first to use locally
+' !include C4_Deployment.puml
+
+LAYOUT_LANDSCAPE()
+
+Deployment_Node(browser, "Web Browser"){
+    Container(spa, "Single Page Application", "JavaScript", "Die geladene Single Page Application.")
+}
+
+Deployment_Node(frontendServer, "Server", "NGINX") {
+        Container(frontend, "Frontend") {
+        }
+        Container(backendProxy, "Backend Proxy", "NGINX Konfiguration")
+}
+
+Deployment_Node(server, "Server", "Server/Container") {
+    Node(jar, "Applikations-Instanz", "JavaVM") {
+
+        Container(app, "Application", "") {
+        }
+
+    }
+}
+Rel(browser, frontend, "Laden der Frontend SPA", "HTTPS")
+Rel(spa, backendProxy, "Aufruf der REST API", "HTTPS")
+Rel(backendProxy, app, "Weiterleitung der API Aurufe", "HTTPS")
+@enduml
