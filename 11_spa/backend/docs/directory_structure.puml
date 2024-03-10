@@ -6,7 +6,8 @@
  +++ package.json
  +++ build.gradle.kts
  ++ backend
- ++ gradle.settings.kts
+ +++ build.gradle.kts
+ ++ settings.gradle.kts
 }
 }
 @endsalt
