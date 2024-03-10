@@ -1,0 +1,18 @@
+table.tasklist {
+  width: 100%;
+  text-align: left;
+}
+
+table.tasklist th {
+  padding: 0.5em;
+  background-color: #eee;
+}
+
+table.tasklist td {
+  padding: 0.5em;
+}
+
+.tasklist .done {
+  text-decoration: line-through #ccc;
+  color: #aaa;
+}
