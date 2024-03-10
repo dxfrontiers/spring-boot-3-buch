@@ -1,0 +1,3 @@
+weather-service:
+  url: dev.weather.com
+  port: 8181

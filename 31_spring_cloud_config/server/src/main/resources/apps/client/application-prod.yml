@@ -1,0 +1,3 @@
+weather-service:
+  url: prod.weather.com
+  port: 8181
