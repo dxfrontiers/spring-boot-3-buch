@@ -32,7 +32,7 @@ tasks.register<Copy>("processFrontendResources") {
   dependsOn(":frontend:assembleFrontend")
 
   from(project(":frontend").layout
-          .buildDirectory.dir("dist"))
+          .projectDirectory.dir("dist"))
   into(project.layout
           .buildDirectory.dir("resources/main/public"))
 }
