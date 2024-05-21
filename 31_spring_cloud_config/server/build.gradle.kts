@@ -4,7 +4,7 @@ plugins {
     id("io.spring.dependency-management") version "1.1.4"
 }
 
-group = "de.springbootbuch"
+group = "de.springboot3"
 version = "0.0.1-SNAPSHOT"
 java.sourceCompatibility = JavaVersion.VERSION_17
 
@@ -30,9 +30,7 @@ dependencies {
     implementation("org.springframework.cloud:spring-cloud-config-server")
     implementation("org.springframework.boot:spring-boot-starter-web")
     implementation("org.springframework.boot:spring-boot-starter-security")
-    compileOnly("org.projectlombok:lombok")
     annotationProcessor("org.springframework.boot:spring-boot-configuration-processor")
-    annotationProcessor("org.projectlombok:lombok")
 }
 
 tasks.withType<Test> {
